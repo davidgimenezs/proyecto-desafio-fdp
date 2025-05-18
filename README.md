@@ -1,4 +1,4 @@
-# Relación entre las condiciones ambientales y la generación de energía de un panel solar
+# Relación entre las condiciones ambientales y la generación de energía de un panel solar — Versión GUI
 
 **Autor:** David Alfredo Giménez Sánchez  
 **Cátedra:** Fundamentos de Programación - Sección F  
@@ -7,48 +7,64 @@
 
 ## Descripción
 
-Este proyecto analiza la relación entre diferentes condiciones ambientales (temperatura, humedad, presión) y la generación de energía de un panel solar, permitiendo la visualización y análisis de datos meteorológicos y energéticos mediante gráficos y estadísticas.
-
-El sistema permite la carga de datos tanto de forma manual como automática (desde un archivo CSV), visualiza los datos ingresados, genera distintos tipos de gráficos y muestra estadísticas descriptivas de las variables analizadas.
+Esta versión incorpora una **interfaz gráfica de usuario (GUI)** que facilita el manejo, la visualización y el análisis de los datos ambientales y la energía generada por un panel solar. Todo el flujo de trabajo original se ha adaptado para interactuar mediante ventanas y controles gráficos, haciendo la experiencia más intuitiva y amigable.
 
 ## Funcionalidades
 
-- **Carga de datos manual:** Ingreso interactivo de registros de variables ambientales y energía generada.
-- **Carga automática:** Lectura de datos desde archivos CSV estructurados.
-- **Validación de datos:** Comprueba la validez de fechas, horas y valores numéricos.
-- **Visualización:** 
-  - Energía generada en función del tiempo.
-  - Relación entre temperatura, humedad y presión respecto a la energía generada.
+- **Carga de datos manual:** Ingreso de registros a través de formularios gráficos.
+- **Carga automática:** Importación de datos desde archivos CSV.
+- **Validación de datos:** Verificaciones automáticas de formato y valores.
+- **Visualización gráfica:** 
+  - Gráficos interactivos de energía generada en función del tiempo.
+  - Análisis visual de la relación entre temperatura, humedad, presión y la energía generada.
   - Energía promedio por hora del día.
-- **Estadísticas:** Muestra estadísticas descriptivas (mínimo, máximo, media, mediana, desviación estándar) de las variables principales.
-- **Interfaz de menú interactivo** por consola.
+- **Estadísticas:** Consulta de estadísticas descriptivas de las variables principales.
+- **Interfaz gráfica:** Navegación por ventanas, menús y botones.
 
-## Versión experimental con interfaz gráfica
+## Requisitos y dependencias
 
-En el branch [`version-GUI`](https://github.com/davidgimenezs/proyecto-desafio-fdp/tree/version-GUI) se encuentra disponible una **versión experimental** del programa, la cual incorpora una interfaz gráfica de usuario (GUI) en lugar de la tradicional por terminal.  
-Esta versión facilita el manejo y la visualización de los datos de manera más intuitiva y amigable.  
-Para probarla, cambia al branch correspondiente:
+- **Python 3.7 o superior**
+- **numpy**
+- **matplotlib**
+- **tkinter** (librería estándar para interfaces gráficas en Python)
 
-```bash
-git checkout version-GUI
-```
-
-Y sigue las instrucciones del README o ejecuta el programa principal.
-
-## Requisitos
-
-- Python 3.7 o superior
-- Paquetes:
-  - numpy
-  - matplotlib
-
-Puedes instalar las dependencias ejecutando:
+Puedes instalar las dependencias principales, excepto `tkinter` (que suele venir incluida en la instalación estándar de Python) ejecutando:
 
 ```bash
 pip install numpy matplotlib
 ```
 
-> **Nota:** La versión experimental GUI puede requerir dependencias adicionales como `tkinter` o librerías específicas para la interfaz gráfica. Consulta el código o README de ese branch para más detalles.
+### Instalación de tkinter
+
+- En **Windows** y **macOS** normalmente ya viene incluida junto con Python.
+- En algunas distribuciones de **Linux**, puedes instalarla con:
+  - Debian/Ubuntu:  
+    ```bash
+    sudo apt-get install python3-tk
+    ```
+  - Fedora:  
+    ```bash
+    sudo dnf install python3-tkinter
+    ```
+
+**Nota:**  
+La presencia de `tkinter` es obligatoria para el funcionamiento de la versión GUI.
+
+## Instalación y ejecución
+
+1. Cambia al branch `version-GUI`:
+
+   ```bash
+   git checkout version-GUI
+   ```
+
+2. Instala las dependencias necesarias como se describe arriba.
+
+3. Ejecuta el programa principal de la versión GUI (reemplaza `proyecto_desafio_gui.py` por el nombre real del archivo):
+
+   ```bash
+   python proyecto_desafio_gui.py
+   ```
 
 ## Estructura de los datos
 
@@ -68,33 +84,18 @@ Fecha,Hora,Temperatura,Humedad,Presion,Energia
 18/05/2025,12:00:00,32.5,45.0,1013.2,156.8
 ```
 
-## Uso
+## Uso general
 
-1. Clona este repositorio:
-    ```bash
-    git clone https://github.com/davidgimenezs/proyecto-desafio-fdp.git
-    cd proyecto-desafio-fdp
-    ```
-
-2. Ejecuta el programa principal:
-    ```bash
-    python proyecto-desafio.py
-    ```
-
-3. Selecciona una de las opciones del menú:
-    - **Carga manual de datos:** Ingresa los datos ambiental y de energía a mano.
-    - **Carga automática desde archivo CSV:** El programa buscará el archivo `datos.csv` en la misma carpeta.
-    - **Salir:** Cierra el programa.
-
-4. Después de cargar los datos, puedes:
-    - Visualizar gráficos interactivos.
-    - Consultar estadísticas descriptivas.
+1. Al iniciar el programa se mostrará la ventana principal de la aplicación.
+2. Utiliza los menús para cargar datos, visualizar gráficos y consultar estadísticas.
+3. Puedes ingresar datos manualmente o importar un archivo CSV.
+4. Todos los resultados y gráficas se mostrarán en la ventana, sin necesidad de usar la consola.
 
 ## Notas
 
-- En la carga automática, asegúrate de que el archivo `datos.csv` esté en el mismo directorio que el script.
-- Las funciones de validación aseguran la integridad de los datos antes de procesarlos o graficarlos.
-- Si algún dato es inválido, se notificará en consola y ese registro será ignorado.
+- Asegúrate de que el archivo `datos.csv` esté en la misma carpeta que el script si usas la carga automática.
+- Las validaciones se realizan automáticamente al ingresar o importar datos.
+- Si algún dato es inválido, la aplicación lo notificará mediante la interfaz gráfica.
 
 ## Licencia
 
