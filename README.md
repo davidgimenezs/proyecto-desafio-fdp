@@ -31,24 +31,8 @@ Esta versión incorpora una **interfaz gráfica de usuario (GUI)** que facilita 
 Puedes instalar las dependencias principales, excepto `tkinter` (que suele venir incluida en la instalación estándar de Python) ejecutando:
 
 ```bash
-pip install numpy matplotlib
+pip install Pillow numpy pandas matplotlib
 ```
-
-### Instalación de tkinter
-
-- En **Windows** y **macOS** normalmente ya viene incluida junto con Python.
-- En algunas distribuciones de **Linux**, puedes instalarla con:
-  - Debian/Ubuntu:  
-    ```bash
-    sudo apt-get install python3-tk
-    ```
-  - Fedora:  
-    ```bash
-    sudo dnf install python3-tkinter
-    ```
-
-**Nota:**  
-La presencia de `tkinter` es obligatoria para el funcionamiento de la versión GUI.
 
 ## Instalación y ejecución
 
