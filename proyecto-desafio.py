@@ -426,7 +426,7 @@ while True:
     
     elif opcion == 2:
         print("\n--- CARGA AUTOMÁTICA DESDE ARCHIVO CSV ---")
-        archivo = 'datos_ejemplo_gamma.csv'
+        archivo = 'datos.csv'
         try:
             fechas, horas, temperaturas, humedades, presiones, energias = carga_automatica(archivo)
             print(f"\nDatos cargados correctamente desde '{archivo}'!")
